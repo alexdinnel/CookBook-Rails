@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>New Recipe</h1>
+
+  <%= render('errors') %>
+
+  <form action="/recipes/new" method="post">
+    <div class="form-group">
+      <%= render('form') %>
+      <button> Add Recipe </button>
+    </div>
+  </form>
+
+  <a href="/"> Go Back </a>
+</div>

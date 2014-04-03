@@ -1,0 +1,9 @@
+<label for="tag_name">Name:</label>
+<input id="tag_name" name="tag[name]" type="text" value="<%= @tag.name %>">
+<label for="tag_recipe_id">Recipe:</label>
+<select name="tag[recipe_id]">
+  <% Recipe.all.each do |recipe| %>
+  <option value="<%= recipe.id %>"> <%= recipe.name %> </option>
+  <% end %>
+</select>
+

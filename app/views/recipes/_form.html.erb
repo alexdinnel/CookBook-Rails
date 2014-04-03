@@ -1,0 +1,20 @@
+<div class="form-group has-error has-feedback">
+  <label for="recipe_name">Name:</label>
+  <input id="recipe_name" name="recipe[name]" type="text" value="<%= @recipe.name %>">
+</div>
+<div class="form-group has-error has-feedback">
+  <label for="recipe_ingredients">Ingredients:</label>
+  <input id="recipe_ingredients" name="recipe[ingredients]" type="text" value="<%= @recipe.ingredients %>">
+</div>
+<div class="form-group">
+  <label for="recipe_stars">Rating:</label>
+  <select name="recipe[stars]">
+    <% (1..5).each do |star| %>
+    <option value="<%= star %>"> <%= star %> </option>
+    <% end %>
+  </select>
+</div>
+<div class="form-group has-error has-feedback">
+  <label for="recipe_recipe">Directions:</label>
+  <textarea class="form-control" rows="3" id="recipe_recipe"  name="recipe[recipe]" type="text" value="<%= @recipe.recipe %>"></textarea>
+</div>

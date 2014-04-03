@@ -1,0 +1,33 @@
+<div class="container">
+
+  <h1><%= @recipe.name %></h1>
+
+  <h5>Star Rating: <%= @recipe.stars%> out of 5 </h5>
+
+  <h3><u>Ingredients</u></h3>
+  <p><%= @recipe.ingredients %></p>
+
+  <h3><u>Directions</u></h3>
+  <p><%= @recipe.recipe %></p>
+
+  <h4>Tags:</h4>
+  <ul>
+  <% Tag.all.each do |tag| %>
+    <% if @recipe.id == tag.recipe_id %>
+      <li><p><a href="/tags/<%= tag.name %>"><%= tag.name %></a></p></li>
+    <% end %>
+  <% end %>
+  </ul>
+
+
+  <p><a href="/tags/new"> Add tags to this recipe </a></p>
+
+  <p><a href="/recipes/<%= @recipe.id %>/edit"> Edit this recipe </a></p>
+
+  <p><a href="/recipes/<%= @recipe.id %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></p>
+
+  <p><a href="/"> Go Back </a></p>
+</div>

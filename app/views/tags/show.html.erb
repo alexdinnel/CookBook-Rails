@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>All recipes with the <%= @tag.name %> tag</h1>
+
+  <h4>Recipes:</h4>
+  <ul>
+    <% Recipe.all.each do |recipe| %>
+      <% if recipe.id == @tag.recipe_id %>
+        <li><p><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></p></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <p><a href="/"> Go Back </a></p>
+</div>

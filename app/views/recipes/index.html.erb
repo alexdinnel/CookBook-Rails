@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+      <h1>Recipes</h1>
+      <ul>
+        <% @recipes.each do |recipe| %>
+        <li><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
+        <% end %>
+      </ul>
+      <a href="/recipes/new"> Add a new recipe </a>
+  </div>
+  <br>
+  <div class="row">
+      <form role="form" action="/recipes" method="post">
+        <div class="form-group">
+          <%= render('search') %>
+          <button> Search </button>
+        </div>
+      </form>
+  </div>
+</div>
+
